@@ -34,8 +34,7 @@ home = _get_home()
 deps_path = home + "/.rdeps/"
 
 tools_path = deps_path + "tools/"
-gles_path = deps_path + "gles31-sys/"
-#soil_path = deps_path + "soil2/"
+
 this_path = os.path.dirname(os.path.abspath(__file__))
 
 def rm(path):
@@ -49,7 +48,6 @@ def rm(path):
 
 if cleanup:
     rm(tools_path)
-    rm(gles_path)
 
 
 def run(string):
@@ -90,7 +88,6 @@ if android:
 
 
 clone("tools", tools_path)
-clone("gles31-sys", gles_path)
 
 
 def link_deps():
