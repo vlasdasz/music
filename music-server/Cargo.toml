@@ -4,8 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+id3 = "1.0"
 bincode = "1.3"
+
 tokio = { version = "0.2", features = ["full"] }
 
 net = { path = "../net" }
 model = { path = "../model" }
+
+tools = { path = "../.rdeps/tools"}

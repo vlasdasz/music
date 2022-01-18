@@ -1,5 +1,5 @@
 use std::{
-    io::{Read, Result, Write},
+    io::{Result, Write},
     net::TcpStream,
 };
 
@@ -20,10 +20,6 @@ fn main() -> Result<()> {
     stream.write(&ser)?;
 
     println!("write OK");
-
-    stream.read(&mut [0; 128])?;
-
-    println!("read OK");
 
     Ok(())
 }

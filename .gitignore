@@ -11,3 +11,7 @@ Cargo.lock
 
 /extern
 /.rdeps
+
+Media.localized
+
+Music Library.musiclibrary
