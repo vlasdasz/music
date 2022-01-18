@@ -1,0 +1,9 @@
+[package]
+name = "music-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "0.2", features = ["full"] }
+
+model = { path = "../model" }
