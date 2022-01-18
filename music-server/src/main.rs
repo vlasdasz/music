@@ -3,6 +3,12 @@ use std::{
     net::{TcpListener, TcpStream},
 };
 
+use model::device_info::DeviceInfo;
+
+
+
+
+
 fn handle_client(mut stream: TcpStream) {
     dbg!(&stream);
 
@@ -11,6 +17,10 @@ fn handle_client(mut stream: TcpStream) {
     stream.read(&mut buf).unwrap();
 
     dbg!(buf);
+
+    let device_info: DeviceInfo = bincode::deserialize(&buf).unwrap();
+
+    dbg!(device_info);
 }
 
 #[tokio::main]

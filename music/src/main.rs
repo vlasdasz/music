@@ -4,7 +4,14 @@ use std::{
     net::TcpStream,
 };
 
+use model::device_info::DeviceInfo;
+
 fn main() -> Result<()> {
+
+    let info = DeviceInfo::default();
+
+    dbg!(&info);
+
     let remote = match env::var("MUSIC_REMOTE") {
         Err(_) => panic!("Failed to get remote. Please set MUSIC_REMOTE environment variable"),
         Ok(r) => r,
@@ -19,7 +26,13 @@ fn main() -> Result<()> {
 
     println!("Connected");
 
-    stream.write(&[1])?;
+    let ser = bincode::serialize(&info).unwrap();
+
+    dbg!(ser.len());
+
+    dbg!(&ser);
+
+    stream.write(&ser)?;
 
     println!("write OK");
 
