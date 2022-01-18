@@ -5,10 +5,6 @@ use std::{
 
 use model::device_info::DeviceInfo;
 
-
-
-
-
 fn handle_client(mut stream: TcpStream) {
     dbg!(&stream);
 
@@ -16,9 +12,7 @@ fn handle_client(mut stream: TcpStream) {
 
     stream.read(&mut buf).unwrap();
 
-    dbg!(buf);
-
-    let device_info: DeviceInfo = bincode::deserialize(&buf).unwrap();
+    let device_info: DeviceInfo = net::data::de(&buf);
 
     dbg!(device_info);
 }

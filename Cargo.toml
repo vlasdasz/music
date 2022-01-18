@@ -1,6 +1,7 @@
 [workspace]
 
 members = [
+    "net",
     "model",
     "music",
     "music-server"
