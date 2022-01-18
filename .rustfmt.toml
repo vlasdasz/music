@@ -1,0 +1,6 @@
+imports_granularity = "Crate"
+group_imports = "StdExternalCrate"
+format_strings = true
+struct_field_align_threshold = 100
+use_field_init_shorthand = true
+wrap_comments = true
